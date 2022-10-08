@@ -1,5 +1,6 @@
 package com.abhishekslal.cryptovalidatore
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -15,11 +16,14 @@ import com.google.zxing.BarcodeFormat
 class CodeScannerActivity : AppCompatActivity() {
     private lateinit var codeScanner: CodeScanner
     private lateinit var binding: ActivityCodeScannerBinding
+    private lateinit var coinCode: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCodeScannerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        coinCode = intent.getStringExtra("coinCode").toString()
 
         val scannerView = findViewById<CodeScannerView>(R.id.scanner_view)
         codeScanner = CodeScanner(this, scannerView)
@@ -36,7 +40,11 @@ class CodeScannerActivity : AppCompatActivity() {
         // Callbacks
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
+                val intent = Intent(this@CodeScannerActivity, ValidationActivity::class.java)
+                intent.putExtra("coinCode", coinCode)
+                intent.putExtra("decodedData", it.text)
+                startActivity(intent)
+//                Toast.makeText(this, "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
             }
         }
         codeScanner.errorCallback = ErrorCallback { // or ErrorCallback.SUPPRESS

@@ -15,6 +15,13 @@
         android:theme="@style/Theme.JunoCryptoValidator.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ValidationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CodeScannerActivity"
             android:exported="false">
             <meta-data

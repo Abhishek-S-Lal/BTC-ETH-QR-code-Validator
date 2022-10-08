@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.scanBTC.setOnClickListener{
-
             if (isCameraPermissionGranted()) {
                 //start activity
                 val intent = Intent(this@MainActivity,CodeScannerActivity::class.java)
+                intent.putExtra("coinCode", "BTC")
                 startActivity(intent)
             } else {
                 ActivityCompat.requestPermissions(
@@ -33,8 +33,21 @@ class MainActivity : AppCompatActivity() {
                     REQUEST_CAMERA_PERMISSION
                 )
             }
-
         }
+        binding.scanETH.setOnClickListener{
+            if (isCameraPermissionGranted()) {
+                //start activity
+                val intent = Intent(this@MainActivity,CodeScannerActivity::class.java)
+                intent.putExtra("coinCode", "ETH")
+                startActivity(intent)
+            } else {
+                ActivityCompat.requestPermissions(
+                    this, arrayOf(Manifest.permission.CAMERA),
+                    REQUEST_CAMERA_PERMISSION
+                )
+            }
+        }
+
     }
 
     private fun isCameraPermissionGranted(): Boolean {
