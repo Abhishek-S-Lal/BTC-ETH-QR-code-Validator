@@ -1,6 +1,6 @@
 # BTC ETH Address QR code Validator
 
-## :scroll: Description:
+## Description:
 This is a simple QR code scanner Android Application that validates BTC and ETH addresses.
 
 ## User flow:
