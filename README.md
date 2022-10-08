@@ -24,5 +24,4 @@ Click [here](https://)
 
 ## Purpose:
 This is an assignment submitted for Juno
-```
 
