@@ -16,11 +16,11 @@ This is a simple QR code scanner Android Application that validates BTC and ETH 
 **~Libraries used:-<br />**
 implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'<br />
 
-## Apk: Drive link:
-Click [here](https://drive.google.com/file/) to Download the apk.
+## Apk Link:
+Click [here](https://drive.google.com/file/d/11D8EOjGmNvflv_FkjPKLjVrt9H4ViPdB/view?usp=sharing) to Download the apk.
 
-## App: Demo Video:
-Click [here](https://)
+## Demo Video:
+Click [here](https://drive.google.com/file/d/1aYrgw7uG3jQBjDTfKjUPHMRgXl2QQF7h/view?usp=sharing)
 
 ## Purpose:
 This is an assignment submitted for Juno
